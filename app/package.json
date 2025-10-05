@@ -16,14 +16,13 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "cross-env  NODE_ENV=development DEBUG=zeromq-prime-demo:* nodemon ./bin/www",
+    "dev": "cross-env  NODE_ENV=development DEBUG=zeromq-prime-demo:* node --watch-path=./src  ./bin/www",
     "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.7",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
-
     "ejs": "^3.1.10",
     "express": "^5.0.0",
     "express-session": "^1.18.2",
