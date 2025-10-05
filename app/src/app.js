@@ -11,9 +11,7 @@ import crypto from "crypto"; // For generating secure random values
 import morgan from "morgan";
 
 
-// Load environment variables (ensure this is done before using process.env)
-import { config as dotenvConfig } from "dotenv";
-dotenvConfig();
+
 
 //  Explicitly create __dirname
 const __filename = fileURLToPath(import.meta.url);

@@ -3,21 +3,22 @@
 /**
  * Module dependencies.
  */
-import { configDotenv } from 'dotenv';
+
 
 import app, { shutdown } from '../src/app.js';
 import debugLib from 'debug';
-const debug = debugLib("server-sent-events:server");
+const debug = debugLib("zeromq-prime-demo:application");
 import http from 'http'
 
 
+import { serverLogger } from './../../shared/src/logger.js'
 
-configDotenv();
+
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.APP_PORT || '3000');
 app.set('port', port);
 
 /**
@@ -100,7 +101,7 @@ function onListening() {
 }
 
 async function handleShutdown() {
-  
+    serverLogger.info("Received shutdown signal, cleaning up...");
   if (typeof shutdown === 'function') shutdown();
   
   // Wait 1000ms to allow events to flush, then exit
