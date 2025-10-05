@@ -7,13 +7,11 @@
 "scripts": {
 "dev": "npm-run-all -p dev:app dev:worker",
 "dev:app": "npm --workspace app run dev",
-"dev:worker": "npm --workspace worker run dev",
-"start": "npm-run-all -p start:app start:worker",
-"start:app": "npm --workspace app run start",
-"start:worker": "npm --workspace worker run start"
+"dev:worker": "npm --workspace worker run dev"
 },
 "dependencies": {
-
+"dotenv": "^16.4.5",
+"dotenv-expand": "^12.0.1",
 "npm-run-all": "^4.1.5"
 }
 }
