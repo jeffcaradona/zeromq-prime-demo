@@ -3,7 +3,7 @@
 "private": true,
 "type": "module",
 "engines": { "node": ">=22" },
-"workspaces": ["app", "worker"],
+"workspaces": ["app","shared", "worker"],
 "scripts": {
 "dev": "npm-run-all -p dev:app dev:worker",
 "dev:app": "npm --workspace app run dev",
@@ -14,6 +14,7 @@
 },
 "dependencies": {
 "dotenv": "^16.4.5",
+"dotenv-expand": "^12.0.1",
 "npm-run-all": "^4.1.5"
 }
 }
